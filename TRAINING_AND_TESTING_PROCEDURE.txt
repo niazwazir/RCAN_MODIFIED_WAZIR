@@ -1,0 +1,18 @@
+
+TRAININGPROCEDURE
+ORIGINAL CODE DOWNLOAD FROM HERE
+-------------------------------------
+https://github.com/yjn870/RCAN-pytorch
+------------------------------------
+ORIGINAL CODE HAS SOME ERROR, SO I MODIFIED AND CORRECTED IT, SO DOWN LOAD FROM HERE
+
+NOW PUT X2, X3, AND X4 IMAGES in DIV2K DATASETS AND THEN START TRAINING
+
+CORRECT PATH IN dataset.py
+------------------------------
+python main.py --scale 2 --num_rg 6 --num_rcab 12 --num_features 64 --images_dir DIV2K/DIV2K_train_HR/x2 --outputs_dir TRAINING_WEIGHTS --patch_size 48 --batch_size 16 --num_epochs 20 --lr 1e-4 --threads 8 --seed 123 --use_fast_loader
+
+TESTING PROCEDURE
+-----------------------------    
+
+python example.py --scale 2 --num_rg 2 --num_rcab 4 --num_features 64 --weights_path TRAINING_WEIGHTS/RCAN_epoch_19.pth --image_path SET5/zebra_HR_x2.png --outputs_dir SR_MODEL_IMAGE_RESULTS                        
